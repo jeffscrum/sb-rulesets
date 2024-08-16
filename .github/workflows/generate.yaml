@@ -1,9 +1,6 @@
 name: Generate and Update AdAway Lists
 
-on:
-  push:
-    tags:
-      - "*"
+on: push
 
 permissions:
   contents: write
@@ -14,7 +11,10 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-        
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
+
       # - name: Pull Changes
       #   run: git pull
 
