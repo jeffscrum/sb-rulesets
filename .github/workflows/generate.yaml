@@ -15,8 +15,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         
-      - name: Pull Changes
-        run: git pull
+      # - name: Pull Changes
+      #   run: git pull
 
       # - name: Set up Node.js (if required)
       #   uses: actions/setup-node@v4
