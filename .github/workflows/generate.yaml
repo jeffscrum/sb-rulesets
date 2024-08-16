@@ -12,11 +12,10 @@ jobs:
   generate_lists:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-        
-      - name: Pull Changes
-        run: git pull
+      - name: Clone repo
+        run: | 
+          git clone https://github.com/jeffscrum/sb-rule-sets.git &&
+          cd sb-rule-sets
 
       - name: Set up Node.js (if required)
         uses: actions/setup-node@v4
