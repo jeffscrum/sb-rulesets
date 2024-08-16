@@ -61,8 +61,6 @@ jobs:
         run: |
           ls -l
           rm generate-geoip-geosite
-          rm ./adaway/domains.dat
-          ls -l
           
       - name: Get current date
         id: date
