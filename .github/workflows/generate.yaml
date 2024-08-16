@@ -38,36 +38,36 @@ jobs:
 
       - name: Configure sources json 
         run: |
-          cat << EOF > adaway.json
+          cat << EOF > sourceAdAway.json
           [
-          {
-            "url": "https://schakal.ru/hosts/alive_hosts_mail_fb.txt",
-            "contentType": "HostsFile",
-            "category": "adaway_alive_hosts_mail_fb"
-          },
-          {
-            "url": "https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt",
-            "contentType": "HostsFile",
-            "category": "adaway_d3hosts"
-          }
+            {
+              "url": "https://schakal.ru/hosts/alive_hosts_mail_fb.txt",
+              "contentType": "HostsFile",
+              "category": "adaway_alive_hosts_mail_fb"
+            },
+            {
+              "url": "https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt",
+              "contentType": "HostsFile",
+              "category": "adaway_d3hosts"
+            }
           ]
           EOF
         
       - name: Generate AdAway ruleset
         run: |
-          ./generate-geoip-geosite -s adaway.json -i ./adaway -o ./adaway --gen-rule-set-srs --gen-rule-set-json
+          ./generate-geoip-geosite -s sourceAdAway.json -i ./adaway -o ./adaway --gen-rule-set-srs
 
-      - name: Copy .srs and jason files to repository directory
+      - name: Cleanup
         run: |
-          pwd && ls -l
-          cp ./adaway/*.srs /home/runner/work/sb-rule-sets/sb-rule-sets/
-          cp ./adaway/*.json /home/runner/work/sb-rule-sets/sb-rule-sets/
+          ls -l
+          rm generate-geoip-geosite
+          rm ./adaway/domains.dat
           ls -l
           
       - name: Get current date
         id: date
         run: |
-          echo "DATE=$(TZ=Europe/Moscow date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+          echo "DATE=$(TZ=Europe/Moscow date +'%Y-%m-%d')" >> $GITHUB_ENV
       
       - name: Commit and Push Changes
         uses: EndBug/add-and-commit@v9
@@ -80,5 +80,5 @@ jobs:
           default_author: github_actor
           fetch: --tags --force
           pathspec_error_handling: ignore
-          new_branch: custom-new-branch
-          github_token: ${{ secrets.RULESET_TOKEN }}
+          new_branch: rulesets
+          # github_token: ${{ secrets.RULESET_TOKEN }}
