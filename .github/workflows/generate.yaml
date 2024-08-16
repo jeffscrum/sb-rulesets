@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  generate_lists:
+  generate-rulesets:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -55,12 +55,14 @@ jobs:
         
       - name: Generate AdAway ruleset
         run: |
-          ./generate-geoip-geosite -s adaway.json -i ./adaway -o ./adaway --gen-rule-set-srs --gen-rule-set-json          
+          ./generate-geoip-geosite -s adaway.json -i ./adaway -o ./adaway --gen-rule-set-srs --gen-rule-set-json
 
       - name: Copy .srs and jason files to repository directory
         run: |
+          pwd && ls -l
           cp ./adaway/*.srs /home/runner/work/sb-rule-sets/sb-rule-sets/
           cp ./adaway/*.json /home/runner/work/sb-rule-sets/sb-rule-sets/
+          ls -l
           
       - name: Get current date
         id: date
