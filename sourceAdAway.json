@@ -1,0 +1,12 @@
+[
+  {
+    "url": "https://schakal.ru/hosts/alive_hosts_mail_fb.txt",
+    "contentType": "HostsFile",
+    "category": "adaway_alive_hosts_mail_fb"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt",
+    "contentType": "HostsFile",
+    "category": "adaway_d3hosts"
+  }
+]
