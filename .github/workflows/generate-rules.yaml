@@ -32,6 +32,7 @@ jobs:
       - name: Generate AdAway ruleset
         run: |
           ./generate-geoip-geosite -s sourceAdAway.json -i ./adaway -o ./adaway --gen-rule-set-srs
+          ./generate-geoip-geosite -i ./custom -o ./custom --gen-rule-set-srs
 
       - name: Cleanup
         run: |
