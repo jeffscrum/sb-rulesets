@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "lan",
+        "localhost",
+        "local",
+        "0.in-addr.arpa",
+        "10.in-addr.arpa",
+        "127.in-addr.arpa",
+        "16.172.in-addr.arpa",
+        "0.168.192.in-addr.arpa",
+        "88.168.192.in-addr.arpa"
+      ]
+    }
+  ]
+}
