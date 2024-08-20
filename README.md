@@ -1,1 +1,1 @@
-# sb-rule-sets
+# sb-rulesets
