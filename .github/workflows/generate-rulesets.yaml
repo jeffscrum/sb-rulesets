@@ -2,7 +2,7 @@ name: Generate and Update AdAway Lists
 
 on:
   schedule:
-    - cron: '15 * * * *'  # Run 12-20 pm everyday.
+    - cron: '50 * * * *'  # Run 12-20 pm everyday.
 
 permissions:
   contents: write
@@ -38,7 +38,7 @@ jobs:
       - name: Generate AdAway ruleset
         run: |
           ./generate-geoip-geosite -s sourceAdAway.json -i ./adaway -o ./adaway --gen-rule-set-srs
-          for i in $(ls custom/*.json); do ./sing-box rule-set compile "$i" && echo "$i"; done;
+          for i in $(ls custom/*.json); do ./sing-box rule-set compile "$i" && echo "Generate ruleset for $i"; done;
 
       - name: Cleanup
         run: |
