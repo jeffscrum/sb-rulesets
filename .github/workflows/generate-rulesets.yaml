@@ -42,7 +42,7 @@ jobs:
 
       - name: Cleanup
         run: |
-          rm sing-box generate-geoip-geosite
+          rm -f sing-box generate-geoip-geosite
 
       - name: Get current date
         id: date
