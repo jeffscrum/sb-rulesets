@@ -24,6 +24,17 @@
         "tx.me",
         "usercontent.dev"
       ]
+    },
+    {
+      "package_name":[
+        "org.telegram.messenger"
+      ]
+    },
+    {
+      "process_name":[
+        "Telegram.exe",
+        "Telegram"
+      ]
     }
   ]
 }
