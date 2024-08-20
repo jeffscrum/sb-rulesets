@@ -2,7 +2,7 @@ name: Generate and Update AdAway Lists
 
 on:
   schedule:
-    - cron: '15 2 * * *'  # Run 02-15 am everyday.
+    - cron: '20 12 * * *'  # Run 12-20 pm everyday.
 
 permissions:
   contents: write
