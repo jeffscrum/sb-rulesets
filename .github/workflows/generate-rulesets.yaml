@@ -2,7 +2,10 @@ name: Generate and Update Rulesets
 
 on:
   schedule:
-    - cron: '37 * * * *'  # Run 02-20 am everyday.
+    - cron: '20 3 * * *'  # Run 03-20 am everyday.
+  push:
+    tags: 
+      - '*'
 
 permissions:
   contents: write
