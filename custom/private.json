@@ -3,14 +3,20 @@
   "rules": [
     {
       "domain_suffix": [
+        "arpa",
+        "internal",
+        "intranet",
+        "private",
+        "corp",
+        "home",
         "lan",
         "localhost",
         "local",
-        "0.in-addr.arpa",
-        "10.in-addr.arpa",
+        "onion",
         "127.in-addr.arpa",
         "16.172.in-addr.arpa",
         "0.168.192.in-addr.arpa",
+        "1.168.192.in-addr.arpa",
         "88.168.192.in-addr.arpa"
       ]
     }
