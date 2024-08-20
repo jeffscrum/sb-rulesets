@@ -24,10 +24,10 @@
         "tx.me",
         "usercontent.dev"
       ],
-      "package_name":[
+      "package_name": [
         "org.telegram.messenger"
       ],
-      "process_name":[
+      "process_name": [
         "Telegram.exe",
         "Telegram"
       ]
